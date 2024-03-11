@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'skemapronews';
+    src: local('skemapronews medium'),
+         url('../assets/fonts/skemapronews/SkemaProNews-Medium.otf') format('otf'),
+         url('../assets/fonts/skemapronews/SkemaProNews-Medium.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'skemapronews';
+    src: local('skemapronews medium'),
+         url('../assets/fonts/skemapronews/SkemaProNews-MediumItalic.otf') format('otf'),
+         url('../assets/fonts/skemapronews/SkemaProNews-MediumItalic.ttf') format('ttf');
+    font-weight: normal;
+    font-style: italic;
+  }

@@ -1,0 +1,17 @@
+/* MainContainer.css */
+
+.main-container {
+    margin: 20px; /* Approx. 1cm space from the edges */
+    background-color: #f4f9fc; 
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 100vh;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .main-container {
+      margin: 15px;
+    }
+  }
+  
