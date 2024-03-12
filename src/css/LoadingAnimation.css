@@ -1,0 +1,181 @@
+.loading-container {
+	display: fixed;
+	background-color: #aadcec;
+	margin: 20px;
+	height: calc(100vh - 40px);
+}
+
+.dot-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.dot {
+	width: 20px;
+	height: 20px;
+	background-color: #fff; /* Set dot color */
+	margin: 0 10px; /* Adjust spacing between dots */
+	border-radius: 50%;
+	animation: moveDot 5s linear infinite alternate;
+}
+
+.dot-bricks {
+	position: relative;
+	top: 8px;
+	left: -9999px;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background-color: #9880ff;
+	color: #9880ff;
+	box-shadow: 9991px -16px 0 0 #9880ff, 9991px 0 0 0 #9880ff,
+		10007px 0 0 0 #9880ff;
+	animation: dot-bricks 1.5s infinite ease;
+}
+
+@keyframes dot-bricks {
+	0% {
+		box-shadow: 9991px -16px 0 0 #9880ff, 9991px 0 0 0 #9880ff,
+			10007px 0 0 0 #9880ff;
+	}
+	8.333% {
+		box-shadow: 10007px -16px 0 0 #9880ff, 9991px 0 0 0 #9880ff,
+			10007px 0 0 0 #9880ff;
+	}
+	16.667% {
+		box-shadow: 10007px -16px 0 0 #9880ff, 9991px -16px 0 0 #9880ff,
+			10007px 0 0 0 #9880ff;
+	}
+	25% {
+		box-shadow: 10007px -16px 0 0 #9880ff, 9991px -16px 0 0 #9880ff,
+			9991px 0 0 0 #9880ff;
+	}
+	33.333% {
+		box-shadow: 10007px 0 0 0 #9880ff, 9991px -16px 0 0 #9880ff,
+			9991px 0 0 0 #9880ff;
+	}
+	41.667% {
+		box-shadow: 10007px 0 0 0 #9880ff, 10007px -16px 0 0 #9880ff,
+			9991px 0 0 0 #9880ff;
+	}
+	50% {
+		box-shadow: 10007px 0 0 0 #9880ff, 10007px -16px 0 0 #9880ff,
+			9991px -16px 0 0 #9880ff;
+	}
+	58.333% {
+		box-shadow: 9991px 0 0 0 #9880ff, 10007px -16px 0 0 #9880ff,
+			9991px -16px 0 0 #9880ff;
+	}
+	66.666% {
+		box-shadow: 9991px 0 0 0 #9880ff, 10007px 0 0 0 #9880ff,
+			9991px -16px 0 0 #9880ff;
+	}
+	75% {
+		box-shadow: 9991px 0 0 0 #9880ff, 10007px 0 0 0 #9880ff,
+			10007px -16px 0 0 #9880ff;
+	}
+	83.333% {
+		box-shadow: 9991px -16px 0 0 #9880ff, 10007px 0 0 0 #9880ff,
+			10007px -16px 0 0 #9880ff;
+	}
+	91.667% {
+		box-shadow: 9991px -16px 0 0 #9880ff, 9991px 0 0 0 #9880ff,
+			10007px -16px 0 0 #9880ff;
+	}
+	100% {
+		box-shadow: 9991px -16px 0 0 #9880ff, 9991px 0 0 0 #9880ff,
+			10007px 0 0 0 #9880ff;
+	}
+}
+
+.dot-overtaking {
+	position: relative;
+	width: 12px;
+	height: 12px;
+	border-radius: 6px;
+	background-color: transparent;
+	color: hsl(0deg, 100%, 0%);
+	margin: -1px 0;
+	box-shadow: 0 -20px 0 0;
+	filter: blur(2px);
+	animation: dot-overtaking 2s infinite cubic-bezier(0.2, 0.6, 0.8, 0.2);
+}
+.dot-overtaking::before,
+.dot-overtaking::after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 12px;
+	height: 12px;
+	border-radius: 6px;
+	background-color: transparent;
+	color: hsl(0deg, 100%, 0%);
+	box-shadow: 0 -20px 0 0;
+	filter: blur(2px);
+}
+.dot-overtaking::before {
+	animation: dot-overtaking 2s infinite cubic-bezier(0.2, 0.6, 0.8, 0.2);
+	animation-delay: 0.3s;
+}
+.dot-overtaking::after {
+	animation: dot-overtaking 1.5s infinite cubic-bezier(0.2, 0.6, 0.8, 0.2);
+	animation-delay: 0.6s;
+}
+
+@keyframes dot-overtaking {
+	0% {
+		transform: rotateZ(0deg);
+	}
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
+
+@keyframes pan-down {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(100%);
+	}
+}
+
+.animate-out {
+	animation: pan-down 0.5s linear forwards; /* Pan down animation */
+}
+
+/* CSS for animated components */
+.header {
+	animation: fadeIn 4s ease-out;
+}
+
+.landing {
+	animation: slideInFromLeft 1s ease-out;
+}
+
+.aboutme {
+	animation: slideInFromLeft 1s ease-out;
+}
+
+@keyframes slideInFromLeft {
+	from {
+		transform: translateX(-100%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

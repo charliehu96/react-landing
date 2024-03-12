@@ -1,0 +1,18 @@
+#header {
+	font-weight: 600;
+	font-stretch: expanded;
+	font-size: 20px;
+	/* animation: fadeIn 5s ease-out; */
+}
+
+.menu-container {
+	border-left: 2px solid #cad1df;
+	margin-left: 40px;
+	padding-left: 30px;
+	height: 50px;
+	align-self: center;
+}
+
+.contact-me {
+	padding-left: 20px;
+}

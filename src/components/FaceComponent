@@ -1,0 +1,41 @@
+import React, { useState, useRef } from 'react';
+
+const FaceComponent = () => {
+  const [eyePosition, setEyePosition] = useState({ x: 0, y: 0 });
+  const faceRef = useRef();
+
+  const handleMouseMove = (e) => {
+    if (!faceRef.current) {
+      return;
+    }
+
+    const faceBox = faceRef.current.getBoundingClientRect();
+    const faceCenterX = faceBox.left + faceBox.width / 2;
+    const faceCenterY = faceBox.top + faceBox.height / 2;
+    const eyeMaxMove = 10; // max movement range for eyes
+
+    // Calculate the distance from the center of the SVG to the cursor
+    const deltaX = (e.clientX - faceCenterX) / faceBox.width * eyeMaxMove;
+    const deltaY = (e.clientY - faceCenterY) / faceBox.height * eyeMaxMove;
+
+    // Update the eye position state
+    setEyePosition({ x: deltaX, y: deltaY });
+  };
+
+  return (
+    <div onMouseMove={handleMouseMove} ref={faceRef}>
+      <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        {/* Face SVG goes here */}
+        {/* You'll have to create the face SVG with separate groups for eyes and head */}
+        <g id="head" /* Apply transformation for head movement */>
+          {/* Head SVG elements */}
+        </g>
+        <g id="eyes" transform={`translate(${eyePosition.x}, ${eyePosition.y})`}>
+          {/* Eye SVG elements */}
+        </g>
+      </svg>
+    </div>
+  );
+};
+
+export default FaceComponent;

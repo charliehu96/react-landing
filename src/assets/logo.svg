@@ -1,0 +1,10 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shadow under the triangle -->
+  <polygon points="105,115 195,195 15,195" fill="rgba(0, 0, 0, 0.2)"/>
+  <!-- Triangle -->
+  <polygon points="100,10 190,190 10,190" fill="none" stroke="#8d48e4" stroke-width="2"/>
+  <!-- Varied Wave Lines within the triangle -->
+  <!-- <path d="M30,150 Q50,130 70,150 T110,150 T150,170" stroke="#aadcec" stroke-width="2" fill="none"/>
+  <path d="M50,170 Q75,145 100,170 T140,190" stroke="#aadcec" stroke-width="2" fill="none"/>
+  <path d="M70,190 Q95,160 120,190 T160,190" stroke="#aadcec" stroke-width="2" fill="none"/> -->
+</svg>
